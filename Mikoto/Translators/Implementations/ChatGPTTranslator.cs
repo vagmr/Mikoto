@@ -14,13 +14,13 @@ namespace Mikoto.Translators.Implementations
     public class ChatGPTTranslator : ITranslator
     {
         private ChatGPTTranslator() { }
-        public static readonly string SIGN_UP_URL = "https://platform.openai.com";
-        public static readonly string BILL_URL = "https://platform.openai.com/account/usage";
+        public static readonly string SIGN_UP_URL = "https://api.deepseek.com";
+        public static readonly string BILL_URL = "https://api.deepseek.com/user/balance";
         public static readonly string DOCUMENT_URL = "https://platform.openai.com/docs/introduction/overview";
-        private string openai_model = "gpt-3.5-turbo";
+        private string openai_model = "deepseek-chat";
 
-        private string? apiKey; //ChatGPT翻译API的密钥
-        private string? apiUrl; //ChatGPT翻译API的URL
+        private string? apiKey; //deepseek翻译API的密钥
+        private string? apiUrl; //deepseek翻译API的URL
         private string errorInfo = string.Empty; //错误信息
 
         public string TranslatorDisplayName { get { return Application.Current.Resources["ChatGPTTranslator"].ToString()!; } }

@@ -143,7 +143,7 @@ namespace Mikoto
             set;
         }
 
-        [Option(Alias = "ChatGPTTranslator.ApiUrl", DefaultValue = "https://api.openai.com/v1/chat/completions")]
+        [Option(Alias = "ChatGPTTranslator.ApiUrl", DefaultValue = "https://api.deepseek.com/v1/chat/completions")]
         string ChatGPTapiUrl
         {
             get;

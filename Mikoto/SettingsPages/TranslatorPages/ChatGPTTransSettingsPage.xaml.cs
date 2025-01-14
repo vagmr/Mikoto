@@ -50,6 +50,7 @@ namespace Mikoto.SettingsPages.TranslatorPages
             Process.Start(new ProcessStartInfo(ChatGPTTranslator.BILL_URL) { UseShellExecute = true });
         }
 
+
         private async void TransTestBtn_Click(object sender, RoutedEventArgs e)
         {
             ITranslator chatGPTTrans = ChatGPTTranslator.TranslatorInit(ChatGPTTransSecretKeyBox.Text, ChatGPTTransUrlBox.Text);

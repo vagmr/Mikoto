@@ -27,9 +27,9 @@ jobs:
       - name: Publish-x64
         run: dotnet publish /p:RuntimeIdentifier=win-x64
       - name: Rename-x64
-        run: Rename-Item -Path ./Mikoto/bin/Release/net8.0-windows/win-x64/publish -NewName mikoto-64bit
+        run: Rename-Item -Path ./Mikoto/bin/Release/net8.0-windows10.0.26100/win-x64/publish -NewName mikoto-64bit
       - name: Zip-x64
-        run: Compress-Archive -Path ./Mikoto/bin/Release/net8.0-windows/win-x64/mikoto-64bit -Destination mikoto-64bit.zip
+        run: Compress-Archive -Path ./Mikoto/bin/Release/net8.0-windows10.0.26100/win-x64/mikoto-64bit -Destination mikoto-64bit.zip
 
       # - name: Publish-x86
       #   run: dotnet publish /p:RuntimeIdentifier=win-x86

@@ -43,7 +43,7 @@ namespace Mikoto.Translators.Implementations
                 return null;
             }
             string retString;
-            string jsonParam = $"{{\"model\": \"{openai_model}\",\"messages\": [{{\"role\": \"system\", \"content\": \"将{srcLang}文本翻译成{desLang}文本输出\"}},{{\"role\": \"user\", \"content\": \"{q}\"}}], \"response_format\": {{\"type\": \"{format}\"}}, \"max_tokens\": {max_tokens}, \"temperature\": {temperature}}}";
+            string jsonParam = $"{{\"model\": \"{openai_model}\",\"messages\": [{{\"role\": \"system\", \"content\": \"根据原文逐行将{srcLang}文本翻译成{desLang}文本输出,保留文本的原始格式\"}},{{\"role\": \"user\", \"content\": \"{q}\"}}], \"response_format\": {{\"type\": \"{format}\"}}, \"max_tokens\": {max_tokens}, \"temperature\": {temperature}}}";
             var hc = CommonHttpClient.Instance;
             var req = new StringContent(jsonParam, null, "application/json");
             hc.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", apiKey);

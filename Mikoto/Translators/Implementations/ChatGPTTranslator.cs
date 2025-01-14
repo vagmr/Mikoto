@@ -18,7 +18,7 @@ namespace Mikoto.Translators.Implementations
         public static readonly string BILL_URL = "https://api.deepseek.com/user/balance";
         public static readonly string DOCUMENT_URL = "https://platform.openai.com/docs/introduction/overview";
         private string openai_model = "deepseek-chat";
-        private string format = "json_object";
+        private string format = "text"; //json_object
         private int max_tokens = 4096;
         private float temperature = 1.3f;
 
@@ -43,7 +43,7 @@ namespace Mikoto.Translators.Implementations
                 return null;
             }
             string retString;
-            string jsonParam = $"{{\"model\": \"{openai_model}\",\"messages\": [{{\"role\": \"system\", \"content\": \"翻译{srcLang}成{desLang}以JSON format输出\"}},{{\"role\": \"user\", \"content\": \"{q}\"}}], \"response_format\": {{\"type\": \"{format}\"}}, \"max_tokens\": {max_tokens}, \"temperature\": {temperature}}}";
+            string jsonParam = $"{{\"model\": \"{openai_model}\",\"messages\": [{{\"role\": \"system\", \"content\": \"将{srcLang}文本翻译成{desLang}文本输出\"}},{{\"role\": \"user\", \"content\": \"{q}\"}}], \"response_format\": {{\"type\": \"{format}\"}}, \"max_tokens\": {max_tokens}, \"temperature\": {temperature}}}";
             var hc = CommonHttpClient.Instance;
             var req = new StringContent(jsonParam, null, "application/json");
             hc.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", apiKey);

@@ -20,7 +20,7 @@ namespace Mikoto.Translators.Implementations
         private string openai_model = "deepseek-chat";
         private string format = "json_object";
         private int max_tokens = 4096;
-        private float temperature = 1.3;
+        private float temperature = 1.3f;
 
         private string? apiKey; //deepseek翻译API的密钥
         private string? apiUrl; //deepseek翻译API的URL
